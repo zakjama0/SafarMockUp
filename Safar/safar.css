@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* BASE */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif ;
+}
+
+body{
+    background-image: url('12953559_Scene-24.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* Navigator */
+.header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left:0;
+    display: flex;
+    justify-content: space-between ;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(50px);
+    padding: 5px 0px;
+    padding-right: 5px;
+
+    }
+    
+.header li{
+        display: inline;
+        list-style-type: none;
+    }
+    
+    
+.header.sticky{
+background: #3a6cf4;
+padding: 10px 200px;
+    }
+    
+ .header.sticky .nav a:hover{
+color: #000;
+    }
+
+.nav a {
+    font-size: 15px;
+    color: black;
+    text-decoration: none;
+    font-weight: 25px ;
+}
+
+nav li{
+    padding: 5px;
+    justify-content: space-between;
+    text-decoration: none;
+    list-style: none;
+    color: #101920;
+}
+
+
+.nav a {
+    font-size: 15px;
+    color: white ;
+}
+.nav a:hover{
+    color: coral;
+    transition: 0.5s;
+
+}
+.logo img{
+    height: 30px;
+}
+
+.logo:hover{
+    transform: scale(1.2);
+    transition: 0.4s;
+}
+
+
+.nav-close, .nav-toggle{
+    position: absolute;
+    color: white;
+    display: none;
+    font-size: 20px;
+    cursor: pointer;
+    align-self: center;
+    right: 5%;
+    top: 37.5%;
+}
+
+
+#check{
+    display: none;
+}
+
+
+/* Breakpoints*/
+
+@media(max-width:992px){ /*For ipad */
+    .header{
+    padding: 1.3rem 5%;
+    }
+}
+@media(max-width: 768px){ /*For phone */
+    .nav-close, .nav-toggle{
+        display: inline-flex;
+        align-items: center;
+    }
+    .header{
+        justify-content: center;
+        align-items: center;
+    }
+    .nav{
+        position: absolute;
+        top: 100%;
+        justify-content: center;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(50px);
+        opacity: 100;
+        box-shadow: 0.5rem rgba(0, 0, 0, 0.1); 
+        overflow: hidden;
+        transition: 0.3s ease;
+    }
+    .nav-close{
+        display: none;
+    }
+
+    .logo img{
+        right: 50%;
+    }
+
+    #check:checked ~ .icons #nav-toggle{
+        display: none;
+    }
+
+    #check:checked ~ .icons #nav-close{
+        display: block;
+    }
+
+    #check:checked ~ .icons #nav-close{
+        display: block;
+    }
+
+    #check:checked ~.nav{
+        height: 17.7rem
+    }
+    .button{
+        display: none;
+    }
+
+    .nav a{
+        display: block;
+        text-align: center;
+        transform: translateY(-55px);
+        opacity: 0;
+        transition: 0.3s ease;
+    }
+    #check:checked ~.nav a{
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: calc(0.1s * var(--i));
+    }
+
+}
+
+/* Home Page */
+
+ .home{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+    text-align: center;
+  }
+
+
+.home-button{
+    display: inline-block;
+    background: linear-gradient(90deg,#5C6C79, hsl(192,62%,25%));
+    color: #fff;
+    width: max-content;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    transition: background-color 0.4s, box-shadow 0.4s;
+    box-shadow: 0 24px 32px hsla(210, 54%, 24%, 0.3s);
+}
+
+.home-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s;
+    border-radius: 20px;
+  }
+
+  .home-button:hover {
+    color:  coral;
+    box-shadow: 0 0 10px  coral;
+  }
+.home-button:hover::before {
+    opacity: 1;
+  }
+
+
+h1{
+    padding-bottom: 20px;
+    transition: ease-in-out 3s;
+}
+.home-button a{
+text-decoration: none;
+
+}
+
+.home-image{
+    z-index: 1;
+}
+
+.home-image{
+    position: absolute;
+    max-width: inital;
+    width: 600px;
+    bottom: 0; 
+    right: 10px;
+} 
